@@ -120,3 +120,12 @@ h2{
     font-size: 28px;
     margin-top: -6px;
 }
+
+.realizado-por {
+    text-align: center;
+    color: rgb(73, 27, 100);
+    font-size: 14px;
+    margin-top: 20px;
+    opacity: 0.8; /* Esto le da un toque elegante y suave */
+}
+
