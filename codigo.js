@@ -1,24 +1,29 @@
-const claveApi = "2041fa1063bf4d25be4194138261804"; 
+const claveApi = "2041fa1063bf4d25be4194138261804";
 const idioma = "es";
 const inpCiudad= document.getElementById('input-ciudad')
 
+
 async function obtenerClima() {
+
 
     const ciudad = inpCiudad.value;
 
-    if(1ciudad) {
+
+    if(!ciudad) {
         alert('Por favor, ingresa una ciudad');
         return;
     }
-    
-    const apiClimaActualo = `https://api.weatherapi.com/v1/current.json?q=${ciudad}&lang=${idioma}&key=${claveApi}`;
+   
+    const apiClimaActual = `https://api.weatherapi.com/v1/current.json?q=${ciudad}&lang=${idioma}&key=${claveApi}`;
+
 
     const response = await fetch(apiClimaActual);
-    const data = aqwait response.json();
+    const data = await response.json();
 
-    mostrarClima(data); 
+
+    mostrarClima(data);
 }
-funtion mostrarClima(data) {
+function mostrarClima(data) {
     document.querySelector('.clima-icono').src = data.current.condition.icon;
     document.querySelector('.clima-texto').innerHTML = data.current.condition.text;
     document.querySelector('.temp').innerHTML = data.current.temp_c + '°C';
